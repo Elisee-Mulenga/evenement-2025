@@ -30,7 +30,7 @@
 <body class="bg-white text-gray-900">
 
   <!-- HERO avec image -->
- <section class="relative h-[100vh] flex items-center justify-center text-center text-white">
+ <section class="relative h-[60vh] flex items-center justify-center text-center text-white">
   <!-- Background avec overlay -->
   <img src="4.jpg" 
        alt="Gala d'Honneur" 
@@ -41,7 +41,7 @@
   <div class="relative z-10 max-w-4xl px-6">
     <!-- Titre élégant -->
     <h1 class="font-['Playfair_Display'] text-5xl md:text-7xl font-extrabold tracking-wide mb-6">
-      Gala d'Honneur 2025
+      <span class="text-yellow-500">Gala d'Honneur 2025</span>
     </h1>
 
     <!-- Infos événement -->
@@ -60,6 +60,57 @@
       </p>
     </div>
 
+      <!-- Compte à rebours animé -->
+    <div id="countdown" class="flex justify-center gap-6 mb-10">
+      <!-- Exemple d'un cercle pour Jours -->
+      <div class="relative w-24 h-24">
+        <svg class="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#ffffff33" stroke-width="8" fill="none" />
+          <circle id="circle-days" cx="50" cy="50" r="45" stroke="#FFD700" stroke-width="8" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+          <span id="days" class="text-2xl md:text-3xl font-bold">00</span>
+          <span class="text-xs md:text-sm tracking-wider uppercase">Jours</span>
+        </div>
+      </div>
+
+      <!-- Heures -->
+      <div class="relative w-24 h-24">
+        <svg class="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#ffffff33" stroke-width="8" fill="none" />
+          <circle id="circle-hours" cx="50" cy="50" r="45" stroke="#FFD700" stroke-width="8" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+          <span id="hours" class="text-2xl md:text-3xl font-bold">00</span>
+          <span class="text-xs md:text-sm tracking-wider uppercase">Heures</span>
+        </div>
+      </div>
+
+      <!-- Minutes -->
+      <div class="relative w-24 h-24">
+        <svg class="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#ffffff33" stroke-width="8" fill="none" />
+          <circle id="circle-minutes" cx="50" cy="50" r="45" stroke="#FFD700" stroke-width="8" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+          <span id="minutes" class="text-2xl md:text-3xl font-bold">00</span>
+          <span class="text-xs md:text-sm tracking-wider uppercase">Minutes</span>
+        </div>
+      </div>
+
+      <!-- Secondes -->
+      <div class="relative w-24 h-24">
+        <svg class="w-full h-full rotate-[-90deg]" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#ffffff33" stroke-width="8" fill="none" />
+          <circle id="circle-seconds" cx="50" cy="50" r="45" stroke="#FFD700" stroke-width="8" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+          <span id="seconds" class="text-2xl md:text-3xl font-bold">00</span>
+          <span class="text-xs md:text-sm tracking-wider uppercase">Secondes</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Bouton CTA -->
     <a href="https://wa.me/+32478023113" target="_blank" rel="noopener noreferrer"
        class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-gray-900 font-bold px-8 py-4 rounded-full shadow-2xl hover:from-yellow-500 hover:to-yellow-700 transition transform hover:scale-105">
@@ -68,7 +119,41 @@
     </a>
   </div>
 </section>
+  <!-- Script pour le compte à rebours et animation des cercles -->
+<script>
+  const eventDate = new Date("October 25, 2025 19:00:00").getTime();
 
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+    // Affichage numérique
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+
+    // Calcul pour les cercles (stroke-dashoffset)
+    const totalDays = 365; // pour effet cercle (approx)
+    document.getElementById("circle-days").style.strokeDashoffset = 283 - (283 * days / totalDays);
+    document.getElementById("circle-hours").style.strokeDashoffset = 283 - (283 * hours / 24);
+    document.getElementById("circle-minutes").style.strokeDashoffset = 283 - (283 * minutes / 60);
+    document.getElementById("circle-seconds").style.strokeDashoffset = 283 - (283 * seconds / 60);
+
+    if(distance < 0){
+      clearInterval(countdownInterval);
+      document.getElementById("countdown").innerHTML = "<span class='text-2xl font-bold'>Événement en cours !</span>";
+    }
+  }
+
+  updateCountdown(); // init
+  const countdownInterval = setInterval(updateCountdown, 1000);
+</script>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
 
@@ -77,21 +162,25 @@
 <section class="max-w-3xl mx-auto py-20 px-6 text-center">
   <!-- Titre -->
   <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
-    Un événement unique
+    Un <span class="text-yellow-500">événement unique</span>
   </h2>
 
   <!-- Ligne décorative -->
   <div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-8 rounded-full"></div>
 
   <!-- Texte -->
-  <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
-    Bienvenue à notre <span class="font-semibold text-gray-800">gala d’exception</span>, 
-    où <span class="italic">art, musique, humour et gastronomie</span> se rencontrent 
-    pour offrir une soirée inoubliable et mémorable. <br><br>
-    En participant, vous soutenez la <span class="text-indigo-700 font-semibold">Cité Renaissance</span> 
+  <p class="font-['Inter'] text-lg md:text-xl text-gray-700 leading-relaxed">
+    Bienvenue à notre <span class="text-yellow-500">GALA D'HONNEUR</span>, 
+    où art, musique, humour et gastronomie se rencontrent pour offrir une soirée inoubliable et mémorable. <br><br>
+    En participant, vous <span class="font-semibold text-yellow-500">soutenez la Cité Renaissance</span>
     et contribuez à construire un avenir rempli d’espoir.
   </p>
 </section>
+
+<!-- Import des polices dans le <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
@@ -136,13 +225,13 @@
   </div>
 
   <!-- Carte -->
-  <div class="mt-12 max-w-4xl mx-auto">
+  <!-- <div class="mt-12 max-w-4xl mx-auto">
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18..." 
       class="w-full h-72 rounded-2xl shadow-lg border-4 border-white"
       allowfullscreen="" loading="lazy">
     </iframe>
-  </div>
+  </div> -->
 </section>
 
 <!-- Fonts -->
@@ -166,13 +255,13 @@
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
           <i data-lucide="ticket" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-2xl font-semibold">Standard</h3>
+        <h3 class="text-2xl font-semibold">Catégorie Standard</h3>
       </div>
-      <p class="text-sm text-gray-600 mb-6">Billet 100 $</p>
+      <p class="text-sm text-gray-600 mb-6">Achète un Billet de 100$ et tente de ganger:</p>
       <ul class="space-y-2 text-gray-700 text-sm text-left">
-        <li>Massage pour couple</li>
-        <li>Dîner romantique</li>
-        <li>Machine à laver</li>
+        <li>→ Massage pour couple (Jeanne d’Arc)</li>
+        <li>→ Dîner romantique (Novotel)</li>
+        <li>→ Machine à laver</li>
       </ul>
       <button onclick="openModal('modalStandard')" class="mt-6 text-indigo-600 font-medium hover:underline">
         Voir plus →
@@ -185,13 +274,13 @@
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700">
           <i data-lucide="award" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-2xl font-semibold">Silver</h3>
+        <h3 class="text-2xl font-semibold">Catégorie Silver</h3>
       </div>
-      <p class="text-sm text-gray-600 mb-6">Billet 100 $ + 5 invités</p>
+      <p class="text-sm text-gray-600 mb-6">Achète un Billet de 100$ + 5 invités et tente de ganger:</p>
       <ul class="space-y-2 text-gray-700 text-sm text-left">
-        <li>iPhone 17 Pro Max</li>
-        <li>Samsung S25 Ultra</li>
-        <li>Une Moto</li>
+        <li>→ iPhone 17 Pro Max</li>
+        <li>→ Samsung S25 Ultra</li>
+        <li>→ Une Moto</li>
       </ul>
       <button onclick="openModal('modalSilver')" class="mt-6 text-gray-700 font-medium hover:underline">
         Voir plus →
@@ -204,13 +293,13 @@
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600">
           <i data-lucide="gem" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-2xl font-semibold">Gold</h3>
+        <h3 class="text-2xl font-semibold">Catégorie Gold</h3>
       </div>
-      <p class="text-sm text-gray-600 mb-6">Billet 100 $ + 10 invités</p>
+      <p class="text-sm text-gray-600 mb-6">Achète un Billet de 100$ + 10 invités et tente de ganger:</p>
       <ul class="space-y-2 text-gray-700 text-sm text-left">
-        <li>Voyage à Zanzibar</li>
-        <li>MacBook Pro</li>
-        <li>Petit terrain</li>
+        <li>→ Voyage à Zanzibar</li>
+        <li>→ MacBook Pro</li>
+        <li>→ Petit terrain</li>
       </ul>
       <button onclick="openModal('modalGold')" class="mt-6 text-yellow-600 font-medium hover:underline">
         Voir plus →
@@ -223,13 +312,13 @@
         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 text-purple-600">
           <i data-lucide="crown" class="w-6 h-6"></i>
         </div>
-        <h3 class="text-2xl font-semibold">Premium</h3>
+        <h3 class="text-2xl font-semibold">Catégorie Premium</h3>
       </div>
-      <p class="text-sm text-gray-600 mb-6">Billet 100 $ + 20 invités</p>
+      <p class="text-sm text-gray-600 mb-6">Achète un Billet de 100$ + 20 invités et tente de ganger:</p>
       <ul class="space-y-2 text-gray-700 text-sm text-left">
-        <li>Une parcelle</li>
-        <li>Voyage à Dubaï</li>
-        <li>Un véhicule</li>
+        <li>→ Une parcelle</li>
+        <li>→ Voyage à Dubaï</li>
+        <li>→ Un véhicule</li>
       </ul>
       <button onclick="openModal('modalPremium')" class="mt-6 text-purple-600 font-medium hover:underline">
         Voir plus →
@@ -239,59 +328,83 @@
 </section>
 
 <!-- 🔹 MODALS -->
-<div id="modalStandard" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
-    <button onclick="closeModal('modalStandard')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
-    <h3 class="text-2xl font-bold mb-4">Standard</h3>
-    <p class="text-gray-600 mb-4">Avec le billet Standard à 100 $, vous bénéficiez de :</p>
+<!-- MODAL STANDARD -->
+<div id="modalStandard" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative overflow-y-auto max-h-[90vh]">
+    <button onclick="closeModal('modalStandard')" class="absolute top-3 right-3 text-red-600 hover:text-red-800 font-bold text-lg">✕</button>
+    <h3 class="text-2xl font-bold mb-4 text-center">Standard</h3>
+    <p class="text-gray-700 mb-4">
+      <strong>Conditions :</strong> Chaque personne qui achète un billet au prix de 100 $ fait automatiquement partie de cette catégorie.<br>
+      <strong>Prix à gagner :</strong>
+    </p>
     <ul class="list-disc pl-6 space-y-2 text-gray-700">
-      <li>Massage pour couple</li>
-      <li>Dîner romantique</li>
-      <li>Machine à laver</li>
+      <li>Un Dîner romantique (Novotel)</li>
+      <li>Une Pédicure et manucure (Baraka Beauty)</li>
+      <li>Des Bons d’achats au supermarché</li>
+      <li>Un Abonnement car wash pour 1 mois</li>
+      <li>Un Bon d’achat de 50$ pour le carburant</li>
+      <li>Un Abonnement salle de sport pour 1 mois</li>
+      <li>Une cuisinière</li>
+      <li>Une Machine à laver</li>
+      <li>Un petit groupe électrogène</li>
     </ul>
   </div>
 </div>
 
-<div id="modalSilver" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
-    <button onclick="closeModal('modalSilver')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
-    <h3 class="text-2xl font-bold mb-4">Silver</h3>
-    <p class="text-gray-600 mb-4">Avec Silver, 100 $ + 5 invités, vous obtenez :</p>
+<!-- MODAL SILVER -->
+<div id="modalSilver" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative overflow-y-auto max-h-[90vh]">
+    <button onclick="closeModal('modalSilver')" class="absolute top-3 right-3 text-red-600 hover:text-red-800 font-bold text-lg">✕</button>
+    <h3 class="text-2xl font-bold mb-4 text-center">Silver</h3>
+    <p class="text-gray-700 mb-4">
+      <strong>Conditions :</strong> Achat d’un billet de 100$ + parrainage de 5 invités minimum.<br>
+      <strong>Prix à gagner :</strong>
+    </p>
     <ul class="list-disc pl-6 space-y-2 text-gray-700">
       <li>iPhone 17 Pro Max</li>
       <li>Samsung S25 Ultra</li>
       <li>Une Moto</li>
+      <li>Une Tablette</li>
     </ul>
   </div>
 </div>
 
-<div id="modalGold" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
-    <button onclick="closeModal('modalGold')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
-    <h3 class="text-2xl font-bold mb-4">Gold</h3>
-    <p class="text-gray-600 mb-4">Avec Gold, 100 $ + 10 invités, vous recevez :</p>
+<!-- MODAL GOLD -->
+<div id="modalGold" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative overflow-y-auto max-h-[90vh]">
+    <button onclick="closeModal('modalGold')" class="absolute top-3 right-3 text-red-600 hover:text-red-800 font-bold text-lg">✕</button>
+    <h3 class="text-2xl font-bold mb-4 text-center">Gold</h3>
+    <p class="text-gray-700 mb-4">
+      <strong>Conditions :</strong> Achat d’un billet de 100$ + parrainage de 10 invités minimum.<br>
+      <strong>Prix à gagner :</strong>
+    </p>
     <ul class="list-disc pl-6 space-y-2 text-gray-700">
       <li>Voyage à Zanzibar</li>
       <li>MacBook Pro</li>
       <li>Petit terrain</li>
+      <li>Paiement minerval scolaire (jusqu’à 2.000 $)</li>
     </ul>
   </div>
 </div>
 
-<div id="modalPremium" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
-    <button onclick="closeModal('modalPremium')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
-    <h3 class="text-2xl font-bold mb-4">Premium</h3>
-    <p class="text-gray-600 mb-4">Avec Premium, 100 $ + 20 invités, vous recevez :</p>
+<!-- MODAL PREMIUM -->
+<div id="modalPremium" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative overflow-y-auto max-h-[90vh]">
+    <button onclick="closeModal('modalPremium')" class="absolute top-3 right-3 text-red-600 hover:text-red-800 font-bold text-lg">✕</button>
+    <h3 class="text-2xl font-bold mb-4 text-center">Premium</h3>
+    <p class="text-gray-700 mb-4">
+      <strong>Conditions :</strong> Achat d’un billet de 100$ + parrainage de 20 invités minimum.<br>
+      <strong>Prix à gagner :</strong>
+    </p>
     <ul class="list-disc pl-6 space-y-2 text-gray-700">
       <li>Une parcelle</li>
-      <li>Voyage à Dubaï</li>
+      <li>Financement d’un projet personnel</li>
+      <li>Voyage à Dubaï pour un couple</li>
       <li>Un véhicule</li>
     </ul>
   </div>
 </div>
 
-<!-- 🔹 SCRIPT -->
 <script>
   function openModal(id) {
     document.getElementById(id).classList.remove('hidden');
@@ -300,6 +413,7 @@
     document.getElementById(id).classList.add('hidden');
   }
 </script>
+
 
 
 
@@ -325,7 +439,7 @@
   </p>
 
   <!-- Bouton -->
-  <a href="https://wa.me/TEL_WHATSAPP" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/+32478023113" target="_blank" rel="noopener noreferrer"
      class="inline-flex items-center gap-3 bg-yellow-400 text-gray-900 font-semibold px-8 py-4 rounded-2xl shadow-lg hover:bg-yellow-500 transition text-lg">
     <i data-lucide="message-circle" class="w-6 h-6"></i>
     Cliquez ici pour Réserver
