@@ -30,142 +30,308 @@
 <body class="bg-white text-gray-900">
 
   <!-- HERO avec image -->
-  <section class="relative h-[90vh] flex items-center justify-center text-center text-white">
-    <img src="4.jpg" 
-         alt="Gala d'Honneur" 
-         class="absolute inset-0 w-full h-full object-cover brightness-50">
-    <div class="relative z-10 max-w-3xl px-6">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Gala d'Honneur</h1>
-      <p class="text-lg md:text-2xl mb-6">
-        Samedi 25 octobre · 19h00 · Pullman Karavia <br> Dress code : Smoking & Robe de soirée
+ <section class="relative h-[100vh] flex items-center justify-center text-center text-white">
+  <!-- Background avec overlay -->
+  <img src="4.jpg" 
+       alt="Gala d'Honneur" 
+       class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+
+  <!-- Contenu -->
+  <div class="relative z-10 max-w-4xl px-6">
+    <!-- Titre élégant -->
+    <h1 class="font-['Playfair_Display'] text-5xl md:text-7xl font-extrabold tracking-wide mb-6">
+      Gala d'Honneur 2025
+    </h1>
+
+    <!-- Infos événement -->
+    <div class="text-lg md:text-2xl space-y-2 mb-8">
+      <p class="flex items-center justify-center gap-2">
+        <i data-lucide="calendar" class="w-5 h-5 text-accent"></i> 
+        Samedi 25 octobre · 17h00
       </p>
-      <a href="https://wa.me/TEL_WHATSAPP" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-3 bg-accent text-gray-900 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-yellow-500 transition">
-        <i data-lucide="message-circle" class="w-5 h-5"></i> Réserver maintenant
-      </a>
+      <p class="flex items-center justify-center gap-2">
+        <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i> 
+        Pullman Karavia
+      </p>
+      <p class="flex items-center justify-center gap-2">
+        <i data-lucide="sparkles" class="w-5 h-5 text-accent"></i> 
+        Dress code : Smoking & Robe de soirée
+      </p>
     </div>
-  </section>
+
+    <!-- Bouton CTA -->
+    <a href="https://wa.me/+32478023113" target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-gray-900 font-bold px-8 py-4 rounded-full shadow-2xl hover:from-yellow-500 hover:to-yellow-700 transition transform hover:scale-105">
+      <i data-lucide="message-circle" class="w-6 h-6"></i> 
+      Réserver maintenant
+    </a>
+  </div>
+</section>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+
 
   <!-- DESCRIPTION -->
-  <section class="max-w-5xl mx-auto py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6">Un événement unique</h2>
-    <p class="text-lg text-gray-700 mb-4 text-left">
-      Bienvenue à notre gala d’exception, où art, musique, humour et gastronomie se rencontrent pour offrir une soirée unique et mémorable. 
-      En participant, vous soutenez la Cité Renaissance et contribuez à construire un avenir plein d’espoir.
-    </p>
-    
-  </section>
+<section class="max-w-3xl mx-auto py-20 px-6 text-center">
+  <!-- Titre -->
+  <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+    Un événement unique
+  </h2>
+
+  <!-- Ligne décorative -->
+  <div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-8 rounded-full"></div>
+
+  <!-- Texte -->
+  <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+    Bienvenue à notre <span class="font-semibold text-gray-800">gala d’exception</span>, 
+    où <span class="italic">art, musique, humour et gastronomie</span> se rencontrent 
+    pour offrir une soirée inoubliable et mémorable. <br><br>
+    En participant, vous soutenez la <span class="text-indigo-700 font-semibold">Cité Renaissance</span> 
+    et contribuez à construire un avenir rempli d’espoir.
+  </p>
+</section>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+
 
   <!-- INFOS PRATIQUES -->
-  <section class="bg-gray-50 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Infos pratiques</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
-      <div>
-        <i data-lucide="calendar" class="mx-auto w-8 h-8 text-primary mb-3"></i>
-        <h3 class="font-semibold mb-2">Date & Heure</h3>
-        <p class="text-gray-700">Samedi 25 octobre<br>19h00</p>
+  <section class="bg-gray-50 py-20 px-6">
+  <!-- Titre -->
+  <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6">
+    Infos pratiques
+  </h2>
+  <div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-12 rounded-full"></div>
+
+  <!-- Grille des infos -->
+  <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto text-center">
+    <!-- Date -->
+    <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-primary">
+        <i data-lucide="calendar" class="w-7 h-7"></i>
       </div>
-      <div>
-        <i data-lucide="map-pin" class="mx-auto w-8 h-8 text-primary mb-3"></i>
-        <h3 class="font-semibold mb-2">Lieu</h3>
-        <p class="text-gray-700">Pullman Karavia, Lubumbashi</p>
-      </div>
-      <div>
-        <i data-lucide="phone" class="mx-auto w-8 h-8 text-primary mb-3"></i>
-        <h3 class="font-semibold mb-2">Contact</h3>
-        <p class="text-gray-700">+243 89 77 16 915<br>info@gala.com</p>
-      </div>
+      <h3 class="font-semibold text-lg mb-2">Date & Heure</h3>
+      <p class="text-gray-700">Samedi 25 octobre<br>19h00</p>
     </div>
-    <div class="mt-8 max-w-3xl mx-auto">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18..." 
-        class="w-full h-64 rounded-2xl shadow"
-        allowfullscreen="" loading="lazy"></iframe>
+
+    <!-- Lieu -->
+    <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-primary">
+        <i data-lucide="map-pin" class="w-7 h-7"></i>
+      </div>
+      <h3 class="font-semibold text-lg mb-2">Lieu</h3>
+      <p class="text-gray-700">Pullman Karavia<br>Lubumbashi</p>
     </div>
-  </section>
+
+    <!-- Contact -->
+    <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-primary">
+        <i data-lucide="phone" class="w-7 h-7"></i>
+      </div>
+      <h3 class="font-semibold text-lg mb-2">Contact</h3>
+      <p class="text-gray-700">+243 89 77 16 915<br>info@gala.com</p>
+    </div>
+  </div>
+
+  <!-- Carte -->
+  <div class="mt-12 max-w-4xl mx-auto">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18..." 
+      class="w-full h-72 rounded-2xl shadow-lg border-4 border-white"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+
 
   <!-- REMISE DES PRIX -->
-  <section class="py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Récompenses & Parrainages</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-      
-      <!-- Exemple catégorie -->
-      <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
-          <i data-lucide="ticket" class="w-5 h-5 text-accent"></i> Standard
-        </h3>
-        <p class="text-sm mb-4">Billet 100 $</p>
-        <ul class="space-y-2 text-gray-700 text-sm">
-          <li>Massage pour couple</li>
-          <li>Dîner romantique</li>
-          <li>Machine à laver</li>
-        </ul>
-        <button class="mt-4 text-primary text-sm font-medium hover:underline">
-          Voir plus
-        </button>
-      </article>
+  <section class="py-20 px-6 bg-gray-50">
+  <!-- Titre -->
+  <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6">
+    Récompenses & Parrainages
+  </h2>
+  <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-12 rounded-full"></div>
 
-      <!-- Silver -->
-      <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
-          <i data-lucide="award" class="w-5 h-5 text-accent"></i> Silver
-        </h3>
-        <p class="text-sm mb-4">Billet 100 $ + 5 invités</p>
-        <ul class="space-y-2 text-gray-700 text-sm">
-          <li>iPhone 17 Pro Max</li>
-          <li>Samsung S25 Ultra</li>
-          <li>Une Moto</li>
-        </ul>
-        <button class="mt-4 text-primary text-sm font-medium hover:underline">
-          Voir plus
-        </button>
-      </article>
+  <!-- Grille -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
 
-      <!-- Gold -->
-      <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
-          <i data-lucide="gem" class="w-5 h-5 text-accent"></i> Gold
-        </h3>
-        <p class="text-sm mb-4">Billet 100 $ + 10 invités</p>
-        <ul class="space-y-2 text-gray-700 text-sm">
-          <li>Voyage à Zanzibar</li>
-          <li>MacBook Pro</li>
-          <li>Petit terrain</li>
-        </ul>
-        <button class="mt-4 text-primary text-sm font-medium hover:underline">
-          Voir plus
-        </button>
-      </article>
+    <!-- Standard -->
+    <article class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+          <i data-lucide="ticket" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-2xl font-semibold">Standard</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-6">Billet 100 $</p>
+      <ul class="space-y-2 text-gray-700 text-sm text-left">
+        <li>Massage pour couple</li>
+        <li>Dîner romantique</li>
+        <li>Machine à laver</li>
+      </ul>
+      <button onclick="openModal('modalStandard')" class="mt-6 text-indigo-600 font-medium hover:underline">
+        Voir plus →
+      </button>
+    </article>
 
-      <!-- Premium -->
-      <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
-          <i data-lucide="crown" class="w-5 h-5 text-accent"></i> Premium
-        </h3>
-        <p class="text-sm mb-4">Billet 100 $ + 20 invités</p>
-        <ul class="space-y-2 text-gray-700 text-sm">
-          <li>Une parcelle</li>
-          <li>Voyage à Dubaï</li>
-          <li>Un véhicule</li>
-        </ul>
-        <button class="mt-4 text-primary text-sm font-medium hover:underline">
-          Voir plus
-        </button>
-      </article>
-    </div>
-  </section>
+    <!-- Silver -->
+    <article class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700">
+          <i data-lucide="award" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-2xl font-semibold">Silver</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-6">Billet 100 $ + 5 invités</p>
+      <ul class="space-y-2 text-gray-700 text-sm text-left">
+        <li>iPhone 17 Pro Max</li>
+        <li>Samsung S25 Ultra</li>
+        <li>Une Moto</li>
+      </ul>
+      <button onclick="openModal('modalSilver')" class="mt-6 text-gray-700 font-medium hover:underline">
+        Voir plus →
+      </button>
+    </article>
+
+    <!-- Gold -->
+    <article class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600">
+          <i data-lucide="gem" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-2xl font-semibold">Gold</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-6">Billet 100 $ + 10 invités</p>
+      <ul class="space-y-2 text-gray-700 text-sm text-left">
+        <li>Voyage à Zanzibar</li>
+        <li>MacBook Pro</li>
+        <li>Petit terrain</li>
+      </ul>
+      <button onclick="openModal('modalGold')" class="mt-6 text-yellow-600 font-medium hover:underline">
+        Voir plus →
+      </button>
+    </article>
+
+    <!-- Premium -->
+    <article class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 text-purple-600">
+          <i data-lucide="crown" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-2xl font-semibold">Premium</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-6">Billet 100 $ + 20 invités</p>
+      <ul class="space-y-2 text-gray-700 text-sm text-left">
+        <li>Une parcelle</li>
+        <li>Voyage à Dubaï</li>
+        <li>Un véhicule</li>
+      </ul>
+      <button onclick="openModal('modalPremium')" class="mt-6 text-purple-600 font-medium hover:underline">
+        Voir plus →
+      </button>
+    </article>
+  </div>
+</section>
+
+<!-- 🔹 MODALS -->
+<div id="modalStandard" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
+    <button onclick="closeModal('modalStandard')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
+    <h3 class="text-2xl font-bold mb-4">Standard</h3>
+    <p class="text-gray-600 mb-4">Avec le billet Standard à 100 $, vous bénéficiez de :</p>
+    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+      <li>Massage pour couple</li>
+      <li>Dîner romantique</li>
+      <li>Machine à laver</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modalSilver" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
+    <button onclick="closeModal('modalSilver')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
+    <h3 class="text-2xl font-bold mb-4">Silver</h3>
+    <p class="text-gray-600 mb-4">Avec Silver, 100 $ + 5 invités, vous obtenez :</p>
+    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+      <li>iPhone 17 Pro Max</li>
+      <li>Samsung S25 Ultra</li>
+      <li>Une Moto</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modalGold" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
+    <button onclick="closeModal('modalGold')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
+    <h3 class="text-2xl font-bold mb-4">Gold</h3>
+    <p class="text-gray-600 mb-4">Avec Gold, 100 $ + 10 invités, vous recevez :</p>
+    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+      <li>Voyage à Zanzibar</li>
+      <li>MacBook Pro</li>
+      <li>Petit terrain</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modalPremium" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative">
+    <button onclick="closeModal('modalPremium')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">✕</button>
+    <h3 class="text-2xl font-bold mb-4">Premium</h3>
+    <p class="text-gray-600 mb-4">Avec Premium, 100 $ + 20 invités, vous recevez :</p>
+    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+      <li>Une parcelle</li>
+      <li>Voyage à Dubaï</li>
+      <li>Un véhicule</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 🔹 SCRIPT -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
+
+
 
   <!-- CONTACT & CTA -->
-  <section class="bg-primary text-white py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Réservez votre place</h2>
-    <p class="mb-6 text-lg max-w-2xl mx-auto">
-      Participez à un gala unique et soutenez la Cité Renaissance.
-    </p>
-    <a href="https://wa.me/TEL_WHATSAPP" target="_blank" rel="noopener noreferrer"
-       class="inline-flex items-center gap-3 bg-accent text-gray-900 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-yellow-500 transition">
-      <i data-lucide="message-circle" class="w-5 h-5"></i> Réserver maintenant
-    </a>
-  </section>
+ <section class="relative bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white py-20 px-6 text-center">
+  <!-- Icône -->
+  <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-white/10 border border-white/20">
+    <i data-lucide="car" class="w-8 h-8 text-yellow-400"></i>
+  </div>
+
+  <!-- Titre -->
+  <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-extrabold mb-6">
+    Service de voiturier
+  </h2>
+
+  <!-- Ligne décorative -->
+  <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-8 rounded-full"></div>
+
+  <!-- Texte -->
+  <p class="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-gray-100 mb-10">
+    À votre arrivée, profitez d’un <span class="font-semibold text-yellow-400">service voiturier premium</span> : 
+    nos hôtes se chargeront de garer votre véhicule en toute sécurité afin que vous commenciez la soirée l’esprit léger.
+  </p>
+
+  <!-- Bouton -->
+  <a href="https://wa.me/TEL_WHATSAPP" target="_blank" rel="noopener noreferrer"
+     class="inline-flex items-center gap-3 bg-yellow-400 text-gray-900 font-semibold px-8 py-4 rounded-2xl shadow-lg hover:bg-yellow-500 transition text-lg">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+    Cliquez ici pour Réserver
+  </a>
+</section>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
