@@ -3,179 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gala d'Honneur — SOMA SARL</title>
+  <title>Gala d'Honneur</title>
 
-  <!-- Tailwind CSS CDN (comme dans index.html) -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: "#1E40AF",
-            accent: "#F59E0B",
+            primary: "#1E40AF", /* Indigo */
+            accent: "#F59E0B",  /* Doré */
           },
         },
       },
     };
   </script>
 
-  <!-- Police Inter (comme index) -->
+  <!-- Police Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style> body { font-family: Inter, sans-serif; } </style>
 
-  <!-- Lucide icons (une seule inclusion nécessaire) -->
+  <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-white text-gray-900">
 
-
-  <!-- HERO -->
-  <section class="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Gala d'Honneur</h1>
+  <!-- HERO avec image -->
+  <section class="relative h-[90vh] flex items-center justify-center text-center text-white">
+    <img src="4.jpg" 
+         alt="Gala d'Honneur" 
+         class="absolute inset-0 w-full h-full object-cover brightness-50">
+    <div class="relative z-10 max-w-3xl px-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Gala d'Honneur</h1>
       <p class="text-lg md:text-2xl mb-6">
-        Samedi 25 octobre · Pullman Karavia · Dress code : Smokings et robes de soirée
+        Samedi 25 octobre · 19h00 · Pullman Karavia <br> Dress code : Smoking & Robe de soirée
       </p>
-
       <a href="https://wa.me/TEL_WHATSAPP" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-3 bg-white text-indigo-700 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-gray-200 transition">
-        Réserver maintenant
+         class="inline-flex items-center gap-3 bg-accent text-gray-900 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-yellow-500 transition">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Réserver maintenant
       </a>
     </div>
   </section>
 
   <!-- DESCRIPTION -->
-  <section class="max-w-5xl mx-auto py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-6">Un événement unique</h2>
-    <p class="text-lg text-gray-700 mb-4 text-justify">
-      Ce gala d’exception est conçu pour offrir à chaque invité une expérience unique,
-      raffinée et mémorable. Dans une ambiance élégante mêlant art, musique, humour et
-      gastronomie, il sera l’occasion de célébrer la vie, la créativité et la solidarité.
+  <section class="max-w-5xl mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Un événement unique</h2>
+    <p class="text-lg text-gray-700 mb-4 text-left">
+      Bienvenue à notre gala d’exception, où art, musique, humour et gastronomie se rencontrent pour offrir une soirée unique et mémorable. 
+      En participant, vous soutenez la Cité Renaissance et contribuez à construire un avenir plein d’espoir.
     </p>
-    <p class="text-lg text-gray-700 text-justify">
-      Au-delà de la fête, cette soirée porte une mission : soutenir la construction de la
-      <strong> Cité Renaissance</strong>, un projet porteur d’avenir et d’espoir.
-    </p>
+    
   </section>
 
-  <!-- REMISE DES PRIX (grille) -->
+  <!-- INFOS PRATIQUES -->
   <section class="bg-gray-50 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Principe de la remise des prix</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">Infos pratiques</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
+      <div>
+        <i data-lucide="calendar" class="mx-auto w-8 h-8 text-primary mb-3"></i>
+        <h3 class="font-semibold mb-2">Date & Heure</h3>
+        <p class="text-gray-700">Samedi 25 octobre<br>19h00</p>
+      </div>
+      <div>
+        <i data-lucide="map-pin" class="mx-auto w-8 h-8 text-primary mb-3"></i>
+        <h3 class="font-semibold mb-2">Lieu</h3>
+        <p class="text-gray-700">Pullman Karavia, Lubumbashi</p>
+      </div>
+      <div>
+        <i data-lucide="phone" class="mx-auto w-8 h-8 text-primary mb-3"></i>
+        <h3 class="font-semibold mb-2">Contact</h3>
+        <p class="text-gray-700">+243 89 77 16 915<br>info@gala.com</p>
+      </div>
+    </div>
+    <div class="mt-8 max-w-3xl mx-auto">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18..." 
+        class="w-full h-64 rounded-2xl shadow"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
 
+  <!-- REMISE DES PRIX -->
+  <section class="py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Récompenses & Parrainages</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-      <!-- Standard -->
+      
+      <!-- Exemple catégorie -->
       <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3">🎟 Catégorie Standard</h3>
-        <p class="text-sm mb-3">Billet de 100 $</p>
-        <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
-          <li>Massage pour couple (Jeanne d’Arc)</li>
-          <li>Dîner pour couple (Novotel)</li>
-          <li>Pédicure & manucure (Baraka Beauty)</li>
-          <li>Bons d’achat supermarché</li>
-          <li>Abonnement car wash 1 mois</li>
-          <li>Bon carburant 50 $</li>
-          <li>Abonnement salle de sport 1 mois</li>
-          <li>Cuisinière</li>
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
+          <i data-lucide="ticket" class="w-5 h-5 text-accent"></i> Standard
+        </h3>
+        <p class="text-sm mb-4">Billet 100 $</p>
+        <ul class="space-y-2 text-gray-700 text-sm">
+          <li>Massage pour couple</li>
+          <li>Dîner romantique</li>
           <li>Machine à laver</li>
-          <li>Petit groupe électrogène</li>
         </ul>
+        <button class="mt-4 text-primary text-sm font-medium hover:underline">
+          Voir plus
+        </button>
       </article>
 
       <!-- Silver -->
       <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3">🥇 Catégorie Silver</h3>
-        <p class="text-sm mb-3">Billet 100 $ + Parrainage de 5 invités</p>
-        <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
+          <i data-lucide="award" class="w-5 h-5 text-accent"></i> Silver
+        </h3>
+        <p class="text-sm mb-4">Billet 100 $ + 5 invités</p>
+        <ul class="space-y-2 text-gray-700 text-sm">
           <li>iPhone 17 Pro Max</li>
           <li>Samsung S25 Ultra</li>
           <li>Une Moto</li>
-          <li>Une Tablette</li>
         </ul>
+        <button class="mt-4 text-primary text-sm font-medium hover:underline">
+          Voir plus
+        </button>
       </article>
 
       <!-- Gold -->
       <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3">💎 Catégorie Gold</h3>
-        <p class="text-sm mb-3">Billet 100 $ + Parrainage de 10 invités</p>
-        <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
-          <li>Un petit terrain</li>
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
+          <i data-lucide="gem" class="w-5 h-5 text-accent"></i> Gold
+        </h3>
+        <p class="text-sm mb-4">Billet 100 $ + 10 invités</p>
+        <ul class="space-y-2 text-gray-700 text-sm">
           <li>Voyage à Zanzibar</li>
-          <li>MacBook</li>
-          <li>Minerval scolaire jusqu’à 2.000 $</li>
+          <li>MacBook Pro</li>
+          <li>Petit terrain</li>
         </ul>
+        <button class="mt-4 text-primary text-sm font-medium hover:underline">
+          Voir plus
+        </button>
       </article>
 
       <!-- Premium -->
       <article class="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
-        <h3 class="text-xl font-semibold mb-3">✨ Catégorie Premium</h3>
-        <p class="text-sm mb-3">Billet 100 $ + Parrainage de 20 invités</p>
-        <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+        <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
+          <i data-lucide="crown" class="w-5 h-5 text-accent"></i> Premium
+        </h3>
+        <p class="text-sm mb-4">Billet 100 $ + 20 invités</p>
+        <ul class="space-y-2 text-gray-700 text-sm">
           <li>Une parcelle</li>
-          <li>Financement d’un projet personnel</li>
-          <li>Voyage à Dubaï pour un couple</li>
+          <li>Voyage à Dubaï</li>
           <li>Un véhicule</li>
         </ul>
+        <button class="mt-4 text-primary text-sm font-medium hover:underline">
+          Voir plus
+        </button>
       </article>
     </div>
   </section>
 
-  <!-- VOITURIER -->
-  <section class="max-w-4xl mx-auto py-16 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Service de voiturier</h2>
-    <p class="text-lg text-gray-700">
-      À l’entrée de la soirée, un service de voiturier sera disponible afin de garer les
-      véhicules des invités dès leur arrivée sur le lieu.
-    </p>
-  </section>
-
-  <!-- CONTACT & RESERVATION CTA -->
-  <section class="bg-indigo-600 text-white py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Contact & Réservation</h2>
+  <!-- CONTACT & CTA -->
+  <section class="bg-primary text-white py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Réservez votre place</h2>
     <p class="mb-6 text-lg max-w-2xl mx-auto">
-      Réservez votre place dès maintenant et participez à ce gala d’exception.
+      Participez à un gala unique et soutenez la Cité Renaissance.
     </p>
     <a href="https://wa.me/TEL_WHATSAPP" target="_blank" rel="noopener noreferrer"
-       class="inline-flex items-center gap-3 bg-white text-indigo-700 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-gray-200 transition">
-      Réserver maintenant
+       class="inline-flex items-center gap-3 bg-accent text-gray-900 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-yellow-500 transition">
+      <i data-lucide="message-circle" class="w-5 h-5"></i> Réserver maintenant
     </a>
   </section>
 
-  <!-- SCRIPTS -->
   <script>
-    // Date copyright
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Nav active link (réutilise la logique de index.html)
     document.addEventListener("DOMContentLoaded", () => {
-      const path = window.location.pathname.split("/").pop() || "index.html";
-      document.querySelectorAll(".nav-link").forEach(link => {
-        if (link.getAttribute("data-page") === path) {
-          link.classList.add("text-primary", "font-bold", "border-b-2", "border-primary", "pb-1");
-        } else {
-          link.classList.add("text-slate-600", "hover:text-slate-900");
-        }
-      });
-
-      // mobile menu toggle (comme index)
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      let isOpen = false;
-      menuBtn?.addEventListener("click", () => {
-        isOpen = !isOpen;
-        if (isOpen) {
-          mobileMenu.classList.remove("max-h-0");
-          mobileMenu.classList.add("max-h-screen");
-          menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-        } else {
-          mobileMenu.classList.remove("max-h-screen");
-          mobileMenu.classList.add("max-h-0");
-          menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-        }
-        lucide.createIcons();
-      });
-
-      // init lucide icons
       lucide.createIcons();
     });
   </script>
